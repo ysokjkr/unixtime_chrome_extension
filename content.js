@@ -7,8 +7,6 @@ document.addEventListener('mouseup', function(){
     }
   }, false);
 
-
-
 function timeConverter(UNIX_timestamp){
     const a = new Date(UNIX_timestamp * 1000);
     const year = a.getFullYear();
