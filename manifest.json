@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "unixtime",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "content_scripts": [{
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["https://console.treasuredata.com/*"],
       "js": ["content.js"],
       "run_at": "document_end"
     }]
