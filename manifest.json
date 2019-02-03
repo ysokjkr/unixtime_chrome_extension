@@ -3,7 +3,7 @@
   "name": "unixtime",
   "version": "0.1.0",
   "content_scripts": [{
-      "matches": ["https://console.treasuredata.com/*"],
+      "matches": ["https://console.treasuredata.com/app/*"],
       "js": ["content.js"],
       "run_at": "document_end"
     }]

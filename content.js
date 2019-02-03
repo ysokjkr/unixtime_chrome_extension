@@ -1,16 +1,15 @@
-document.addEventListener('mouseup', function(){
-    const selectionText = window.getSelection().toString(); // 選択範囲(selectionオブジェクト)の取得
-    isUnixtime = selectionText && selectionText.length === 10 && !isNaN(Number(selectionText));
-    if(isUnixtime) {
-        const strJst = timeConverter(Number(selectionText));
-        console.log(strJst);
-    }
-}, false);
 
-document.body.insertAdjacentHTML('afterbegin','<input type="button" value="JST" onclick="convertToStrTime()" style="display: inline-block; text-decoration: none; color: #67c5ff; border: solid 2px #67c5ff; border-radius: 3px; transition: .4s">');
+// document.body.insertAdjacentHTML('afterbegin','<input type="button" value="JST" onclick="convertToStrTime()" style="display: inline-block; text-decoration: none; color: #67c5ff; border: solid 2px #67c5ff; border-radius: 3px; transition: .4s">');
+//  convertToStrTimeのイベントをダブルクリックで実行していく。
+document.body.addEventListener('dblclick', function() {
+    convertToStrTime()
+});
 
 function convertToStrTime(){
     const rowgroupLength = document.querySelectorAll('div[role="rowgroup"]').length;
+    if(!rowgroupLength) {
+        return;
+    }
     const rowList = document.querySelectorAll('div[role="rowgroup"]')[rowgroupLength -1].children;
     for (let i = 0; i < rowList.length; i++) {
         const element = rowList[i];
