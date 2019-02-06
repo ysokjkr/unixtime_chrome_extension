@@ -1,9 +1,16 @@
 
 // document.body.insertAdjacentHTML('afterbegin','<input type="button" value="JST" onclick="convertToStrTime()" style="display: inline-block; text-decoration: none; color: #67c5ff; border: solid 2px #67c5ff; border-radius: 3px; transition: .4s">');
-//  convertToStrTimeのイベントをダブルクリックで実行していく。
-document.body.addEventListener('dblclick', function() {
-    convertToStrTime()
-});
+let escCounter = 0;
+document.body.onkeydown = function(event) {
+    if (event.keyCode === 84) {
+        escCounter += 1;
+        if (escCounter >= 2) {
+            convertToStrTime();
+        } else {
+            setTimeout(function() { escCounter = 0; }, 500)
+        }
+    }
+}
 
 function convertToStrTime(){
     const rowgroupLength = document.querySelectorAll('div[role="rowgroup"]').length;
