@@ -6,5 +6,8 @@
       "matches": ["https://console.treasuredata.com/app/*"],
       "js": ["content.js"],
       "run_at": "document_end"
-    }]
+    }],
+  "icons": {
+    "16": "kaichu_dokei.png"
+  }
 }
